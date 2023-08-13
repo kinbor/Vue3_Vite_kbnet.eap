@@ -1,0 +1,20 @@
+$sidebar_width: 220px;
+
+$sidebar_menu_color_text:#000000;
+$sidebar_menu_color_activeText:#409EFF;
+
+$sidebar_menu_bg:#f7f8f9;
+$sidebar_menu_hover:#dddddd;
+
+$sidebar_submenu_bg:#f7f8f9;
+$sidebar_submenu_hover:#dddddd;
+
+:export {
+  sidebar_width: $sidebar_width;
+  sidebar_menu_color_text: $sidebar_menu_color_text;
+  sidebar_menu_color_activeText: $sidebar_menu_color_activeText;
+  sidebar_menu_bg: $sidebar_menu_bg;
+  sidebar_menu_hover: $sidebar_menu_hover;
+  sidebar_submenu_bg: $sidebar_submenu_bg;
+  sidebar_submenu_hover: $sidebar_submenu_hover;
+}

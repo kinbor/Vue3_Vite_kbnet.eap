@@ -1,0 +1,5 @@
+# Ignore artifacts:
+mock
+
+# Ignore all files:
+README.md

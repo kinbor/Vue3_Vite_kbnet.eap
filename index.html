@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="/favicon.ico">
+    <title>KbNet.Web</title>
+    <style type="text/css">
+      html {
+          display: none;
+      }
+    </style>
+    <script>
+        if (self == top) {
+            document.documentElement.style.display = 'block';
+        } else {
+            top.location = self.location;
+        }
+
+        var userAgent = navigator.userAgent // 取得浏览器的userAgent字符串
+        var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1 // 判断是否IE<11浏览器
+        var isEdge = userAgent.indexOf('Edge') > -1 && !isIE // 判断是否IE的Edge浏览器
+        var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1
+        if (isIE || isIE11) {
+          window.location.href = "/oldie.html"
+          /*
+            var reIE = new RegExp('MSIE (\\d+\\.\\d+);')
+            reIE.test(userAgent)
+            var fIEVersion = parseFloat(RegExp['$1'])
+            if (fIEVersion === 7 || fIEVersion === 8 || fIEVersion === 9 || fIEVersion === 10) {
+                window.location.href = "/oldie.html"
+            } else {
+                window.location.href = "/oldie.html" // IE版本<=7
+            }
+          */
+        } else if (isEdge) { 
+          // Edge
+        } else { 
+            // 不是ie浏览器 
+        }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>对不起，系统需要您浏览器的Javascript处于可用状态才能访问，请将您浏览器的Javascript设置为可用状态！</strong>
+    </noscript>
+    <div id="appLight" style="position:fixed;left:0;top:0;width:100%;height:100%;z-index:2147483647;pointer-events:none;background-color:rgba(0,0,0,0);"></div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
