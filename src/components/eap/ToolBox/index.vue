@@ -87,11 +87,10 @@ export default {
   height: 100%;
   vertical-align: text-bottom;
   overflow: hidden;
-
-  &.hover-effect {
-    cursor: pointer;
-    transition: background 0.3s;
-    -webkit-tap-highlight-color: transparent;
-  }
+}
+.hover-effect {
+  cursor: pointer;
+  transition: background 0.3s;
+  -webkit-tap-highlight-color: transparent;
 }
 </style>

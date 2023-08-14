@@ -4,7 +4,6 @@ import { start, close } from '@/utils/nprogress'
 import { token_get } from '@/core/browser/eap/token'
 import genPageTitle from '@/utils/genPageTitle'
 import eapOpen from '@/router/modules/eap_open'
-import eapWhite from '@/router/modules/eap_white'
 
 router.beforeEach(async (to, from, next) => {
   // 1.开启进度条
@@ -19,7 +18,7 @@ router.beforeEach(async (to, from, next) => {
     const hasToken = token_get()
     if (hasToken) {
       // a.已登录，且路由到白名单页面，直接跳转到主页面
-      if (eapWhite.route_white.length > 0 && eapWhite.route_white.indexOf(to.path) !== -1) {
+      if (eapOpen.route_white.length > 0 && eapOpen.route_white.indexOf(to.path) !== -1) {
         next({ path: '/' })
         close()
       } else {
@@ -57,7 +56,7 @@ router.beforeEach(async (to, from, next) => {
       }
     } else {
       // a.未登录，白名单页面，跳转到目标页面
-      if (eapWhite.route_white.length > 0 && eapWhite.route_white.indexOf(to.path) !== -1) {
+      if (eapOpen.route_white.length > 0 && eapOpen.route_white.indexOf(to.path) !== -1) {
         next()
       } else {
         // b.未登录，其他页面，跳转到登录页面

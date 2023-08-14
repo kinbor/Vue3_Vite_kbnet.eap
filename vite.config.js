@@ -37,6 +37,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           vue: ['vue', 'vue-router', 'vuex'],
+          elementplus: ['element-plus'],
           echarts: ['echarts']
         }
       }

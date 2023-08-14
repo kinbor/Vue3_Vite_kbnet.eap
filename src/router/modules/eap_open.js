@@ -1,9 +1,8 @@
-import * as pdtOpen from '@/router/modules/product_open'
+import product_open from '@/router/modules/product_open'
 
-// eslint-disable-next-line prettier/prettier
-let route_open = []
+let route_open = ['/login', '/findPwd', '/resetPwd']
 
-route_open = route_open.concat(pdtOpen.route_open)
+route_open = route_open.concat(product_open)
 
 export default {
   route_open
